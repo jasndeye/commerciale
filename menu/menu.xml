@@ -9,6 +9,6 @@
        <menuitem name="FacturationClients" id="fc" parent="caisse" action="action_commerciale_FacturationClients"/>
        <menuitem name="CommandeClients" id="cc" parent="caisse" action="action_commerciale_CommandeClients"/>
        <menuitem name="FacturationFournisseurs" id="ff" parent="caisse" action="action_commerciale_FacturationFournisseurs"/>
-       <menuitem name="CommandeFournisseurs" id="cf" parent="caisse" action="action_commerciale_CommandeFournisseurs"/>    
+       <menuitem name="CommandeFournisseurs" id="cf" parent="caisse" action="action_commerciale_CommandeFournisseurs"/>     -->
     </data>
 </odoo>

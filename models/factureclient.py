@@ -1,4 +1,4 @@
 from odoo import models,fields,api
 
-class Facture(models.Model):
+class Factureclient(models.Model):
      _inherit = 'account.invoice'

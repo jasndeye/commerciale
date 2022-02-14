@@ -1,7 +1,7 @@
 from odoo import models,fields,api
 
-class Client(models.Model):
-     _name = 'commerciale.client'
+class Pesonnel(models.Model):
+     _name = 'commerciale.personnel'
 
      nom = fields.Char(string="Nom du Produit")
      prenom= fields.Float(string="Prix du plat")

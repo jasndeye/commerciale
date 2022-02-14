@@ -23,8 +23,10 @@
     # always loaded
     'data': [
             'views/client.xml',
-            'views/commande.xml',
-            'views/facture.xml',
+            'views/commandeclient.xml',
+            'views/commandefournisseur.xml',
+            'views/factureclient.xml',
+            'views/facturefournisseur.xml',
             # 'views/livraison.xml',
             'views/menu.xml',
             'views/personnel.xml',
