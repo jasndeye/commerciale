@@ -10,4 +10,4 @@ class Produit(models.Model):
      quantite_stock=fields.Integer(string="Quantité")
      type=fields.Selection([('s','stockable'),('c','consommable')], string="Type Produit")
      categorie=fields.Char(string="Categorie")
-     categorie_mere=fields.Many2one(string="Categorie mére")
+     categorie_mere=fields.Char(string="Categorie mére")
