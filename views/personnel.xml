@@ -1,7 +1,105 @@
 <odoo>
+
     <data>
+
+        <!-- La vue Tree personnel-->
+        <record id="commerciale_personnel_tree" model="ir.ui.view">
+            <field name="name">commerciale_personnel_tree</field>
+            <field name="model">commerciale.personnel</field>
+            <field name="arch" type="xml">
+                <tree string="personnels">
+                  
+                        <field name="nom"/>
+                        <field name="prenom"/>
+                        <field name="telephone" />
+                         <field name="sexe"  />
+                        <field name="mail"/>
+                        <field name="adresse" />
+                        <field name="info_bancaire"  />
+                     
+                     
+                </tree>
+            </field>
+        </record> 
+
+
+       <!-- La vue Formulaire personnel -->
+       <record id="commerciale_personnel_form" model="ir.ui.view">
+            <field name="name">commerciale_personnel_form</field>
+            <field name="model">commerciale.personnel</field>
+            <field name="arch" type="xml">
+              <form string="personnels" version="7.0"> 
+                <sheet>
+                    <group>
+                        <group>  
+                                <field name="nom"/>
+                                <field name="prenom"/>
+                                <field name="telephone" />
+                                <field name="sexe"  />
+                                <field name="dateNaiss" />
+                            </group>
+                            <group>
+                                <field name="mail"/>
+                                <field name="adresse" />
+                                <field name="info_bancaire"  />
+                                <field name="poste"  />
+                            
+                        </group>
+                         
+                    </group>
+                 </sheet>
+              </form>
+            </field>
+        </record>
+
+        <!--Vue recherche-->
+
+        <record id="commerciale_personnel_search" model="ir.ui.view">
+            <field name="name"> commerciale_personnel_search</field>
+            <field name="model">commerciale.personnel</field>
+            <field name="arch" type="xml">
+                <search >
+                   <field name="nom"/>
+                   <field name="prenom" />
+                  
+               </search>
+            </field>
+        </record>
+
+          <!--Vue vignette-->
+    <record model="ir.ui.view" id="commerciale_personnel_kanban">
+      <field name="name">commerciale_personnel_kanban</field>
+      <field name="model">commerciale.personnel</field>
+      <field name="type">kanban</field>
+      <field name="arch" type="xml">
+        <kanban class="o_modules_kanban" > 
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_resource_vignette">
+                <div class="oe_resource_image">
+                    <a type="edit"><img t-attf-src="kanban_image('commerciale.personnel', 'photo',
+                    record.id.value)" class="oe_resource_picture"/></a>
+                </div>
+                <div class="oe_resource_details">
+                    <ul>
+                      <li><field name="nom"/></li>
+                      <li><field name="prenom"/></li>
+                      <li><field name="mail"/></li> 
+                    </ul>
+                </div>
+              </div>  
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+ 
+
+
+
+        <!-- L'action du menu personnel -->
         <record model="ir.actions.act_window" id="action_commerciale_personnel">
-            <field name="name">Personnels</field>
+            <field name="name">personnels</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">commerciale.personnel</field>
             <field name="view_type">form</field>

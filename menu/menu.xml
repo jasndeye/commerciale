@@ -4,7 +4,7 @@
        <menuitem name="Taf-tech" id="taf_menu_root" sequence="1" />
        <menuitem name="Commerciale" id="commerciale_menu_root" parent="taf_menu_root" sequence="1" />
        <menuitem name="Clients" id="client" parent="commerciale_menu_root" sequence="1" action="action_commerciale_client"/>  
-       <menuitem name="Presonnels" id="personnel" parent="commerciale_menu_root" sequence="2" action="action_commerciale_personnel"/>  
+       <menuitem name="Personnels" id="personnel" parent="commerciale_menu_root" sequence="2" action="action_commerciale_personnel"/>  
        <menuitem name="Produits" id="produit" parent="commerciale_menu_root" sequence="3" action="action_commerciale_produit"/> 
        <menuitem name="Caisse" id="caisse" parent="commerciale_menu_root" sequence="4"/> 
        <menuitem name="FacturationClients" id="fc" parent="caisse" action="action_commerciale_FacturationClients"/>
