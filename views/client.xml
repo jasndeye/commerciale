@@ -1,11 +1,108 @@
 <odoo>
+
     <data>
+
+        <!-- La vue Tree client-->
+        <record id="commerciale_client_tree" model="ir.ui.view">
+            <field name="name">commerciale_client_tree</field>
+            <field name="model">commerciale.client</field>
+            <field name="arch" type="xml">
+                <tree string="clients">
+                  
+                        <field name="nom"/>
+                        <field name="prenom"/>
+                        <field name="telephone" />
+                        <field name="mail"/>
+                        <field name="adresse" />
+                        <field name="info_bancaire"  />
+                         <field name="point_fidelite"  />
+                     
+                </tree>
+            </field>
+        </record> 
+
+
+       <!-- La vue Formulaire client -->
+       <record id="commerciale_client_form" model="ir.ui.view">
+            <field name="name">commerciale_client_form</field>
+            <field name="model">commerciale.client</field>
+            <field name="arch" type="xml">
+              <form string="clients" version="7.0"> 
+                <sheet>
+                    <group>
+                        <group string="Information clientle">  
+                            <field name="nom"/>
+                            <field name="prenom"/>
+                            <field name="telephone" />
+                            <field name="mail"/>
+                            <field name="adresse" />
+                        </group>
+                        <group string="Compte Bancaire">
+                            <field name="info_bancaire"  />
+                           
+                        </group>
+                    </group> 
+                   </sheet>
+                   <!-- <notebook>
+                    <page string="Plus">
+                        <field name="info_bancaire"  />
+                    </page>
+                   </notebook> -->
+              </form>
+            
+            </field>
+        </record>
+
+          <!--Vue recherche-->
+
+        <record id="commerciale_client_search" model="ir.ui.view">
+            <field name="name"> commerciale_client_search</field>
+            <field name="model">commerciale.client</field>
+            <field name="arch" type="xml">
+                <search >
+                   <field name="nom"/>
+                   <field name="prenom" />
+                  
+               </search>
+            </field>
+        </record>
+
+         <!--Vue vignette-->
+    <record model="ir.ui.view" id="commerciale_client_kanban">
+      <field name="name">commerciale_client_kanban</field>
+      <field name="model">commerciale.client</field>
+      <field name="type">kanban</field>
+      <field name="arch" type="xml">
+        <kanban class="o_modules_kanban" > 
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_resource_vignette">
+                <div class="oe_resource_image">
+                    <a type="edit"><img t-attf-src="kanban_image('commerciale.client', 'photo',
+                    record.id.value)" class="oe_resource_picture"/></a>
+                </div>
+                <div class="oe_resource_details">
+                    <ul>
+                      <li><field name="nom"/></li>
+                      <li><field name="prenom"/></li>
+                      <li><field name="mail"/></li> 
+                    </ul>
+                </div>
+              </div>  
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+ 
+
+        <!-- L'action du menu client -->
         <record model="ir.actions.act_window" id="action_commerciale_client">
             <field name="name">Clients</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">commerciale.client</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
         </record>
     </data>
 </odoo>
