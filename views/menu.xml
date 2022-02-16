@@ -1,4 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  
+<record model="ir.ui.view" id="commerciale_menu_form">
+<field name="name">commerciale_menu_form</field>
+<field name="model">commerciale.menu</field>
+<field name="arch" type="xml">
+<form>
+<h1>Enregistrement d'un nouveau menu</h1>
+<group>
+  <group>
+    <field name="nom"/>
+    <field name="date_menu"/>
+    <field name="produit_ids"/>
+  </group>
+</group>
+</form>
+</field>
+</record>
+  <!-- vue recherche   -->
+  <record model="ir.ui.view" id="commerciale_menu_search">
+    <field name="name">commerciale_menu__search</field>
+    <field name="model">commerciale.menu</field>
+    <field name="arch" type="xml">
+        <search>
+          <field name="date_menu" string="Menu d'un jour" filter_domain="[('date_menu','=',self)]"/>
+        </search>
+    </field>
+   </record>
+<!--  La vue Tree -->
+    <record model="ir.ui.view" id="commerciale_menu_tree">
+    <field name="name">commerciale_menu_tree</field>
+    <field name="model">commerciale.menu</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="nom"/>
+            <field name="date_menu"/>
+            <field name="produit_ids"/>
+        </tree>
+    </field>
+    </record>
+<!--   actions opening views on models   -->
+    <record model="ir.actions.act_window" id="action_commerciale_menu">
+    <field name="name">Nos Menu</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">commerciale.menu</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form,search</field>
+    <field name="context">{'search_default_date_menu':1}</field>
+    </record>
+
 </odoo>
