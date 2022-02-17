@@ -1,18 +1,27 @@
 <odoo>
-    <record model="ir.ui.view" id="sale_orderclient_form">
-    <field name="name">sale_order_form</field>
-    <field name="model">sale.order</field>
-    <field name="inherit_id" ref="sale.view_order_form"/>
+    <record model="ir.ui.view" id="commerciale_commandeclient_form">
+    <field name="name">commerciale_commandeclient_form</field>
+    <field name="model">commerciale.commandeclient</field>
     <field name="arch" type="xml">
-        <field name="partner_id" position="after">
-        <field name="description"/>
-        </field>
+        <form string="Commande" version="7.0"> 
+            <group>  
+                <!-- <field name="partner_id"/> -->
+                <field name="description"/>
+                <!-- <field name="lname"/>
+                <field name="phone" string="Telephone" />       -->
+            </group>
+            <!-- <group>
+                <field name="street" string="Adresse" />
+                    <field name="mail"/>
+            </group>  -->
+        </form>
     </field>
     </record>
+
     <record model="ir.actions.act_window" id="action_commerciale_CommandeClients">
-        <field name="name">CommandeClients</field>
+        <field name="name">commerciale_commandeclients</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">sale.order</field>
+        <field name="res_model">commerciale.commandeclient</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
     </record>

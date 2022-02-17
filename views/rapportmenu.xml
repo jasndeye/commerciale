@@ -1,6 +1,6 @@
 <odoo>
-    <report id="report_menu" model="commerciale.menu" string="Menu_du_jour" name="commerciale.report_menu_view" file="commerciale.report_menu" report_type="qweb-pdf" />
-    <template id="report_menu_view">
+    <report id="report_menu" model="commerciale.menu" string="Menu_du_jour" name="commerciale.report_contact_view" file="commerciale.report_menu" report_type="qweb-pdf" />
+    <template id="report_contact_view">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
                 <!--  <t t-call="web.external_layout">    -->
@@ -14,6 +14,7 @@
                                             <span style="margin-left:1%" t-esc="doc['date_menu']"></span> 
                                         </h2>
                                         <h3 style="text-align: center;"> Menu Du Jour : 
+                                              <!-- on recuper le nom du menu -->
                                             <span style="margin-left:1%" t-esc="doc['nom']"></span> 
                                         </h3>
                                         <tr style="background-color: #3498db; border:1px solid black;">
@@ -21,10 +22,11 @@
                                         <td style="text-align: center; color: black;">Prix</td>
                                         <td style="text-align: center; color: black;">Photo</td>
                                         </tr>
+                                          <!-- tableau dinamyque, on recuper les infos sur les produits du menu -->
                                         <t t-foreach="doc['produit_ids']" t-as="produit">
                                             <tr style="border:1px solid black;">
                                                 <td style="text-align: center; border:1px solid black;">
-                                                    <span t-esc="produit['nom']"></span>
+                                                    <span t-esc="produit['name']"></span>
                                                 </td>
                                                 <td style="text-align: center; border:1px solid black;">
                                                     <span t-esc="produit['prix']"></span>

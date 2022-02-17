@@ -1,12 +1,13 @@
+from email.policy import default
 from odoo import models,fields,api
 
 class Client(models.Model):
      _name = 'commerciale.client'
-
-     nom = fields.Char(string="Nom du Produit")
-     prenom= fields.Float(string="Prix du plat")
-     telephone= fields.Binary(string="Photo")
-     mail= fields.Text(string="La description du plat")
-     adresse=fields.Char(string="Addresse")
-     info_bancaire=fields.Char(string="Information Bancaire")
-     point_fidelite = fields.Integer(string="Point fidélité")
+     
+     nom = fields.Char(string="Nom", required=True)
+     prenom= fields.Char(string="Prenom", required=True)
+     telephone= fields.Char(string="Telephone", required=True)
+     mail= fields.Char(string="Email", required=False)
+     adresse=fields.Char(string="Adresse", required=True)
+     info_bancaire=fields.Char(string="Information Bancaire", required=True)
+     point_fidelite = fields.Integer(string="Point fidélité" ,default=0)
