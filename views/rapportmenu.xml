@@ -14,6 +14,7 @@
                                             <span style="margin-left:1%" t-esc="doc['date_menu']"></span> 
                                         </h2>
                                         <h3 style="text-align: center;"> Menu Du Jour : 
+                                              <!-- on recuper le nom du menu -->
                                             <span style="margin-left:1%" t-esc="doc['nom']"></span> 
                                         </h3>
                                         <tr style="background-color: #3498db; border:1px solid black;">
@@ -21,6 +22,7 @@
                                         <td style="text-align: center; color: black;">Prix</td>
                                         <td style="text-align: center; color: black;">Photo</td>
                                         </tr>
+                                          <!-- tableau dinamyque, on recuper les infos sur les produits du menu -->
                                         <t t-foreach="doc['produit_ids']" t-as="produit">
                                             <tr style="border:1px solid black;">
                                                 <td style="text-align: center; border:1px solid black;">
