@@ -3,7 +3,7 @@
         <record model="ir.actions.act_window" id="action_commerciale_FacturationFournisseurs">
             <field name="name">FactureFournisseurs</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">account.invoice</field>
+            <field name="res_model">commerciale.facturefournisseur</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!-- <template xml:space="preserve">
+        <t t-extend="ListView.buttons">
+            <t t-jquery="button.o_list_button_add" t-operartion="before"> 
+                <button t-if="widget.modelName == 'res.partner'" class="btn btn-info oe_action_button_pop_up" type="object">POP UP</button>
+            </t>
+        </t>
+    </template> -->
+    <templates xml:space="preserve">
+        <t t-extend="ListView.buttons">
+            <t t-jquery="button.o_list_button_add" t-operation="before" >
+                <button type="button" t-if='widget.modelName == "commerciale.commandeclient"'
+                        class="btn btn-primary oe_action_button_factures">Factures
+                </button>
+            </t>
+        </t>
+    </templates>
