@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "CommercialeAmi",
+    'name': "Commerciale",
 
     'sequence': 2,
 
@@ -22,21 +22,18 @@
 
     # always loaded
     'data': [
-            'views/assets.xml',
-            'views/client.xml',
-            'views/commandeclient.xml',
-            'views/commandefournisseur.xml',
-            'views/factureclient.xml',
-            'views/facturefournisseur.xml',
-            # 'views/livraison.xml',
-            'views/menu.xml',
-            'views/personnel.xml',
-            'views/produit.xml',
-            'menu/menu.xml',
-            'report_facture.xml'
+            #'views/assets.xml',
+            # 'views/client.xml',
+            # 'views/commandeclient.xml',
+            # 'views/commandefournisseur.xml',
+            # 'views/factureclient.xml',
+            # 'views/facturefournisseur.xml',
+            # 'views/menu.xml',
+            # 'views/personnel.xml',
+            # 'views/produit.xml',
+            # 'menu/menu.xml',
+            # 'report_facture.xml'
     ],
-    'qweb': [
-    'static/src/xml/factures.xml'],
     # only loaded in demonstration mode
     'installable': True,
     'auto_install': False,
