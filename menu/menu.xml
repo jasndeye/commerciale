@@ -9,6 +9,6 @@
        <menuitem name="Caisse" id="caisse" parent="commerciale_menu_root" sequence="5"/> 
        <menuitem name="Commande" id="cc" parent="caisse" action="action_commerciale_CommandeClients"/>
        <menuitem name="Facturation" id="fc" parent="caisse" action="action_commerciale_FacturationClients"/>
-       <menuitem name="Paiement" id="pp" parent="caisse" action="action_commerciale_Paiement"/>
+       <!-- <menuitem name="Paiement" id="pp" parent="caisse" action="action_commerciale_Paiement"/> -->
         </data>
 </odoo>
