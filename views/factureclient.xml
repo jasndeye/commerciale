@@ -3,9 +3,24 @@
         <record model="ir.actions.act_window" id="action_commerciale_FacturationClients">
             <field name="name">FactureClients</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">account.invoice</field>
+            <field name="res_model">commerciale.factureclient</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>
+
+        <!-- La vue Tree Facture -->
+    <record model="ir.ui.view" id="commerciale_facture_tree">
+        <field name="name">commerciale_facture_tree</field>
+        <field name="model">commerciale.factureclient</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ref_facture"/>
+                <field name="montant" />
+                <field name="date" />
+                <field name="status" />
+                <field name="nom_agent" />
+            </tree>
+        </field>
+    </record>
     </data>
 </odoo>

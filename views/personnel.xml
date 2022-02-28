@@ -3,70 +3,53 @@
     <data>
 
         <!-- La vue Tree personnel-->
-        <record id="commerciale_personnel_tree" model="ir.ui.view">
+        <!-- <record id="commerciale_personnel_tree" model="ir.ui.view">
             <field name="name">commerciale_personnel_tree</field>
-            <field name="model">commerciale.personnel</field>
+            <field name="inherit_id" ref="base.view_users_tree" />
+            <field name="model">res.users</field>
             <field name="arch" type="xml">
                 <tree string="personnels">
-                  
-                        <field name="nom"/>
-                        <field name="prenom"/>
-                        <field name="telephone" />
-                         <field name="sexe"  />
-                        <field name="mail"/>
-                        <field name="adresse" />
-                        <field name="info_bancaire"  />
-                     
-                     
-                </tree>
+                  <field name="telephone" />
+                  <field name="sexe"  />
+                  <field name="mail"/>
+                  <field name="adresse" />
+                  <field name="dateNaiss" /> 
             </field>
-        </record> 
+        </record>  -->
 
 
        <!-- La vue Formulaire personnel -->
        <record id="commerciale_personnel_form" model="ir.ui.view">
             <field name="name">commerciale_personnel_form</field>
+             <!-- <field name="inherit_id" ref="base.view_users_form" /> -->
             <field name="model">commerciale.personnel</field>
             <field name="arch" type="xml">
-              <form string="personnels" version="7.0"> 
-                <sheet>
-                    <group>
-                        <group>  
-                                <field name="nom"/>
-                                <field name="prenom"/>
-                                <field name="telephone" />
-                                <field name="sexe"  />
-                                <field name="dateNaiss" />
-                            </group>
-                            <group>
-                                <field name="mail"/>
-                                <field name="adresse" />
-                                <field name="info_bancaire"  />
-                                <field name="poste"  />
-                            
-                        </group>
-                         
-                    </group>
-                 </sheet>
-              </form>
+              <form>
+                <field name="login" position="after">
+                  <field name="sexe"  />
+                  <field name="dateNaiss" /> 
+                  <field name="adresse" />
+                  <field name="info_bancaire"/>
+                  <field name="poste"/>
+                </field>
+              </form>            
             </field>
         </record>
 
         <!--Vue recherche-->
 
-        <record id="commerciale_personnel_search" model="ir.ui.view">
+        <!-- <record id="commerciale_personnel_search" model="ir.ui.view">
             <field name="name"> commerciale_personnel_search</field>
             <field name="model">commerciale.personnel</field>
             <field name="arch" type="xml">
                 <search >
-                   <field name="nom"/>
-                   <field name="prenom" />
+                   <field name="name"/>
                   
                </search>
             </field>
         </record>
 
-          <!--Vue vignette-->
+         Vue vignette
     <record model="ir.ui.view" id="commerciale_personnel_kanban">
       <field name="name">commerciale_personnel_kanban</field>
       <field name="model">commerciale.personnel</field>
@@ -82,8 +65,7 @@
                 </div>
                 <div class="oe_resource_details">
                     <ul>
-                      <li><field name="nom"/></li>
-                      <li><field name="prenom"/></li>
+                      <li><field name="name"/></li>
                       <li><field name="mail"/></li> 
                     </ul>
                 </div>
@@ -93,7 +75,7 @@
         </kanban>
       </field>
     </record>
- 
+  -->
 
 
 
@@ -101,7 +83,7 @@
         <record model="ir.actions.act_window" id="action_commerciale_personnel">
             <field name="name">personnels</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">commerciale.personnel</field>
+            <field name="res_model">res.users</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>

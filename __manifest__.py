@@ -24,14 +24,13 @@
     'data': [
             'views/client.xml',
             'views/commandeclient.xml',
-            'views/commandefournisseur.xml',
             'views/factureclient.xml',
-            'views/facturefournisseur.xml',
             'views/menu.xml',
             'views/personnel.xml',
             'views/produit.xml',
             'menu/menu.xml',
             'views/rapportmenu.xml',
+            'views/paiement.xml',
     ],
     # only loaded in demonstration mode
     'installable': True,

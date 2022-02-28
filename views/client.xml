@@ -9,8 +9,7 @@
             <field name="arch" type="xml">
                 <tree string="clients">
                   
-                        <field name="nom"/>
-                        <field name="prenom"/>
+                        <field name="name"/>
                         <field name="telephone" />
                         <field name="mail"/>
                         <field name="adresse" />
@@ -30,14 +29,13 @@
               <form string="clients" version="7.0"> 
                 <sheet>
                     <group>
-                        <group string="Information clientle">  
-                            <field name="nom"/>
-                            <field name="prenom"/>
+                        <group>  
+                            <field name="name"/>
                             <field name="telephone" />
                             <field name="mail"/>
                             <field name="adresse" />
                         </group>
-                        <group string="Compte Bancaire">
+                        <group >
                             <field name="info_bancaire"  />
                            
                         </group>
@@ -60,8 +58,7 @@
             <field name="model">commerciale.client</field>
             <field name="arch" type="xml">
                 <search >
-                   <field name="nom"/>
-                   <field name="prenom" />
+                   <field name="name"/>
                   
                </search>
             </field>
@@ -83,8 +80,7 @@
                 </div>
                 <div class="oe_resource_details">
                     <ul>
-                      <li><field name="nom"/></li>
-                      <li><field name="prenom"/></li>
+                      <li><field name="name"/></li>
                       <li><field name="mail"/></li> 
                     </ul>
                 </div>

@@ -1,56 +1,56 @@
 <odoo>
     <data>
     <record model="ir.ui.view" id="commerciale_produit_form">
-    <field name="name">commerciale produit</field>
-    <field name="model">commerciale.produit</field>
-    <field name="arch" type="xml">
-    <form>
-    <!--   <header>
-                                <button attrs="{'invisible':[('type','=','c')]}"
-                                src_model="commerciale.produit"
-                                res_model="commerciale.wizard"
-                                view_mode="form" target="new"
-                                type="object"
-                                string="Mettre à jour le stock"/>
-                            </header>    -->
-    <div class="row">
-    <div style="margin-left:5%;height:50%;width:40%;">
-    <group>
-    <field name="photo" widget="image" style=" width:25%" string="Photo"/>
-    <field name="name" string="Nom"/>
-    <field name="cout" attrs="{'invisible':[('type','=','c')]}" string="prix d'achat"/>
-    <field name="quantite_stock" attrs="{'invisible':[('type','=','c')]}"/>
-    </group>
-    </div>
-    <div style="height:100%;width:48%;">
-    <group>
-    <field name="categorie" string="Categorie"/>
-    <field name="description" string="Description"/>
-    </group>
-    <group>
-    <field name="type" string="Type Produit"/>
-    <field name="prix" string="Prix de vente"/>
-    </group>
-    </div>
-    </div>
-    </form>
-    </field>
+        <field name="name">commerciale produit</field>
+        <field name="model">commerciale.produit</field>
+        <field name="arch" type="xml">
+            <form>
+            <!--   <header>
+                                        <button attrs="{'invisible':[('type','=','c')]}"
+                                        src_model="commerciale.produit"
+                                        res_model="commerciale.wizard"
+                                        view_mode="form" target="new"
+                                        type="object"
+                                        string="Mettre à jour le stock"/>
+                                    </header>    -->
+                <div class="row">
+                    <div style="margin-left:5%;height:50%;width:40%;">
+                        <group>
+                            <field name="photo" widget="image" style=" width:25%" string="Photo"/>
+                            <field name="name" string="Nom"/>
+                            <field name="cout" attrs="{'invisible':[('type','=','c')]}" string="prix d'achat"/>
+                            <field name="quantite_stock" attrs="{'invisible':[('type','=','c')]}"/>
+                        </group>
+                    </div>
+                    <div style="height:100%;width:48%;">
+                        <group>
+                            <field name="categorie" string="Categorie"/>
+                            <field name="description" string="Description"/>
+                        </group>
+                        <group>
+                            <field name="type" string="Type Produit"/>
+                            <field name="prix" string="Prix de vente"/>
+                        </group>
+                    </div>
+                </div>
+            </form>
+        </field>
     </record>
     <record model="ir.ui.view" id="commerciale_produit_tree">
-    <field name="name">commerciale produit</field>
-    <field name="model">commerciale.produit</field>
-    <field name="arch" type="xml">
-    <tree>
-    <field name="name" string="Nom"/>
-    <field name="prix" string="Prix"/>
-    <field name="cout" string="d'achat"/>
-    <field name="photo" string="Photo"/>
-    <field name="description" string="Description"/>
-    <field name="quantite_stock" string="Quantite Stock"/>
-    <field name="type" string="Type Produit"/>
-    <field name="categorie" string="Categorie"/>
-    </tree>
-    </field>
+        <field name="name">commerciale produit</field>
+        <field name="model">commerciale.produit</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string="Nom"/>
+                <field name="prix" string="Prix"/>
+                <field name="cout" string="d'achat"/>
+                <field name="photo" string="Photo"/>
+                <field name="description" string="Description"/>
+                <field name="quantite_stock" string="Quantite Stock"/>
+                <field name="type" string="Type Produit"/>
+                <field name="categorie" string="Categorie"/>
+            </tree>
+        </field>
     </record>
     <!--   <act_window
                     id="launch_book_wizard"
