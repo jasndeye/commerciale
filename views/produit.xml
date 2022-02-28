@@ -33,7 +33,7 @@
     </group>
     </div>
     </div>
-    </form>
+    </form>          
     </field>
     </record>
     <record model="ir.ui.view" id="commerciale_produit_tree">
@@ -42,7 +42,7 @@
     <field name="arch" type="xml">
     <tree>
     <field name="name" string="Nom"/>
-    <field name="prix" string="Prix"/>
+    <field name="prix" string="Prix"/> 
     <field name="cout" string="d'achat"/>
     <field name="photo" string="Photo"/>
     <field name="description" string="Description"/>

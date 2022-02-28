@@ -15,6 +15,7 @@
                          <field name="sexe"  />
                         <field name="mail"/>
                         <field name="adresse" />
+                         <field name="dateNaiss" />
                         <field name="info_bancaire"  />
                      
                      

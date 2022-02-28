@@ -30,14 +30,14 @@
               <form string="clients" version="7.0"> 
                 <sheet>
                     <group>
-                        <group string="Information clientle">  
+                        <group>  
                             <field name="nom"/>
                             <field name="prenom"/>
                             <field name="telephone" />
                             <field name="mail"/>
                             <field name="adresse" />
                         </group>
-                        <group string="Compte Bancaire">
+                        <group >
                             <field name="info_bancaire"  />
                            
                         </group>

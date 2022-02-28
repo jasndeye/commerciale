@@ -1,29 +1,122 @@
 <odoo>
-    <record model="ir.ui.view" id="commerciale_commandeclient_form">
-    <field name="name">commerciale_commandeclient_form</field>
-    <field name="model">commerciale.commandeclient</field>
-    <field name="arch" type="xml">
-        <form string="Commande" version="7.0"> 
-            <group>  
-                <!-- <field name="partner_id"/> -->
-                <field name="description"/>
-                <!-- <field name="lname"/>
-                <field name="phone" string="Telephone" />       -->
-            </group>
-            <!-- <group>
-                <field name="street" string="Adresse" />
-                    <field name="mail"/>
-            </group>  -->
-        </form>
-    </field>
+  
+
+    <!--  La vue Tree commande -->
+        <record id="commerciale_commandeclient_tree" model="ir.ui.view">
+            <field name="name">commerciale_commandeclient_tree</field>
+            <field name="model">commerciale.commandeclient</field>
+            <field name="arch" type="xml">
+                <tree string="etudiant">
+                    <field name="client_id"/> 
+                </tree>
+            </field>
+        </record>
+
+    <!-- La vue Formulaire commande -->
+       <record id="commerciale_order_form" model="ir.ui.view">
+            <field name="name">commerciale_commandeclient_form</field>
+            <field name="model">commerciale.commandeclient</field>
+            <field name="arch" type="xml">
+              <form string="commande" version="7.0"> 
+                 <header>
+                    <button name="action_facturer" string="Confirmer Commande" class="btn-primary" type="object"/>
+                    <button name="action_enregistrer_paiement" string="Enregister un paiement" class="btn-primary" type="object" attrs="{'invisible': [('etat_commande', '=', 'b')]}"/>
+        
+                    <button name="imprimer" string="Imprimer" class="btn-primary" attrs="{'invisible': [('etat_commande', '=', 'b')]}"/>
+                 </header>
+                 <sheet>
+                        <group>  
+                            <field name="client_id"/> 
+                            <field name="etat_commande" invisible="1"/>
+                        </group> 
+                        <notebook>
+                            <page name="order_lines" string="Lignes de commande">                 
+                                <field name="detail_ids"/> 
+                            </page>
+                        </notebook>
+                        <group>
+                            <field name="montant"/>
+                        </group>
+                 </sheet>
+              </form>
+            </field>
+        </record>
+
+        <!--pop up paiement-->
+        <record model="ir.ui.view" id="action_enregistrer_paiement">
+            <field name="name">wizard.form</field>
+            <field name="model">commerciale.paiement</field>
+            <field name="arch" type="xml">
+                <form string="Enregistrer un paiement">
+                    <sheet>
+                        <group>
+                            <field name="montant1"/>
+                            <field name="type"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name='action_paiement' string='Valider' class="btn-primary" type='object'/>
+                        
+                        <button string='Annuler' class='btn-default' special='cancel'/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <!-- La vue Tree commerciale_commandeclient-->
+    <record model="ir.ui.view" id="commerciale_commandeclient_tree">
+        <field name="name">commerciale_commandeclient_tree</field>
+        <field name="model">commerciale.commandeclient</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ref_commande" />
+                <field name="client_id" />
+                <field name="nom_agent" />
+                <field name="montant" />
+                <field name="date" />
+                <!-- <field name="detail_ids" /> -->
+            </tree>
+        </field>
+    </record> 
+    <!-- La vue Tree commerciale_detailscommandeclient -->
+    <record model="ir.ui.view" id="commerciale_detailscommandeclient_tree">
+        <field name="name">commerciale_detailscommandeclient_tree</field>
+        <field name="model">commerciale.detailscommandeclient</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="produit_id" />
+                <field name="prix_unitaire" />
+                <field name="quantite" />
+                <field name="sous_total" />
+            </tree>
+        </field>
     </record>
 
-    <record model="ir.actions.act_window" id="action_commerciale_CommandeClients">
-        <field name="name">commerciale_commandeclients</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">commerciale.commandeclient</field>
-        <field name="view_type">form</field>
-        <field name="view_mode">tree,form</field>
+    <!-- La vue form commerciale_detailscommandeclient -->
+    <record model="ir.ui.view" id="commerciale_detailscommandeclient_form">
+        <field name="name">commerciale_detailscommandeclient_form</field>
+        <field name="model">commerciale.detailscommandeclient</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="produit_id" />
+                    <field name="prix_unitaire" />
+                </group>
+                <group>
+                    <field name="quantite" />
+                    <field name="sous_total" />
+                </group>
+            </form>
+        </field>
     </record>
+
+        <!-- L'action du menu order -->
+        <record model="ir.actions.act_window" id="action_commerciale_CommandeClients">
+          <field name="name">CommandeClients</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">commerciale.commandeclient</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+    
      
 </odoo>

@@ -10,5 +10,5 @@ class Produit(models.Model):
      description= fields.Text()
      quantite_stock=fields.Integer(string="Quantite Stock")
      type=fields.Selection([('s','stockable'),('c','consommable')], string="Type Produit", default="c")
-     categorie=fields.Char(string="Categorie")
+     categorie=fields.Selection([('a','aliment'),('b','boisson')], default="a", string="Categorie")
      # categorie_mere=fields.Many2one(string="Categorie mére")

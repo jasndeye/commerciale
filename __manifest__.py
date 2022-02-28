@@ -24,9 +24,7 @@
     'data': [
             'views/client.xml',
             'views/commandeclient.xml',
-            'views/commandefournisseur.xml',
             'views/factureclient.xml',
-            'views/facturefournisseur.xml',
             'views/menu.xml',
             'views/personnel.xml',
             'views/produit.xml',
