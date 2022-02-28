@@ -2,6 +2,7 @@ from odoo import models,fields,api
 from datetime import date
 
 class Personnel(models.Model):
+     _inherit='res.users'
      _name = 'commerciale.personnel'
 
      sexe=fields.Selection([('F','Femme'),('M','Masculin')], string="Sexe")
