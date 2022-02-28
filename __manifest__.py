@@ -30,7 +30,7 @@
             'views/produit.xml',
             'menu/menu.xml',
             'views/rapportmenu.xml',
-            'views/paiement.xml',
+            # 'views/paiement.xml',
     ],
     # only loaded in demonstration mode
     'installable': True,
