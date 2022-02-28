@@ -8,6 +8,10 @@
        <menuitem name="Produits" id="produit" parent="commerciale_menu_root" sequence="3" action="action_commerciale_produit"/> 
        <menuitem name="Caisse" id="caisse" parent="commerciale_menu_root" sequence="5"/> 
        <menuitem name="Facturation" id="fc" parent="caisse" action="action_commerciale_FacturationClients"/>
+<<<<<<< HEAD
        <menuitem name="Commande" id="cc" parent="caisse" action="action_commerciale_CommandeClients"/>
+=======
+       <!-- <menuitem name="Paiement" id="pp" parent="caisse" action="action_commerciale_Paiement"/> -->
+>>>>>>> b5403f9084c560ce05b9991488a9036edfc6f870
         </data>
 </odoo>
